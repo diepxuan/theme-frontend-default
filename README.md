@@ -21,6 +21,6 @@ The easiest way to install the extension is to use [Composer](https://getcompose
 
 Run the following commands:
 
-- ```$ composer require diepxuan/theme-frontend-dxvn```
+- ```$ composer require diepxuan/theme-frontend-default```
 - ```$ bin/magento setup:upgrade && bin/magento setup:static-content:deploy```
 - And then, you need **enable** in Administrators page
