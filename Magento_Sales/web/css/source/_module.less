@@ -1,5 +1,5 @@
 // /**
-//  * Copyright © 2017 Dxvn, Inc. All rights reserved.
+//  * Copyright © Magento, Inc. All rights reserved.
 //  * See COPYING.txt for license details.
 //  */
 
@@ -80,6 +80,21 @@
 
                 dd {
                     margin: 0;
+                }
+            }
+        }
+    }
+
+    .order-pager-wrapper {
+        .toolbar-amount {
+            padding-top: 3px;
+        }
+
+        .pages-items {
+            .item {
+                &:first-child,
+                &:last-child {
+                    margin-right: 0;
                 }
             }
         }
@@ -247,7 +262,7 @@
         }
 
         .toolbar {
-            &:extend(.abs-add-clearfix-desktop all);
+            &:extend(.abs-add-clearfix-mobile all);
 
             .pages {
                 float: right;
@@ -256,6 +271,55 @@
             .limiter {
                 clear: both;
             }
+        }
+    }
+
+    .order-details-items {
+        thead {
+            display: block;
+
+            tr,
+            td {
+                display: block;
+            }
+        }
+    }
+
+    .table-wrapper {
+        .table.table-order-items {
+            tfoot {
+                td.order-pager-wrapper {
+                    width: 100%;
+                }
+            }
+        }
+    }
+    .order-items.table-wrapper {
+        .col.price,
+        .col.qty,
+        .col.subtotal,
+        .col.msrp {
+            text-align: left;
+        }
+    }
+}
+
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__m) {
+    .order-pager-wrapper {
+        .toolbar-amount {
+            left: inherit;
+            position: relative;
+            text-align: center;
+            top: inherit;
+        }
+
+        .pages {
+            text-align: center;
+        }
+
+        .action.previous,
+        .action.next {
+            margin: 0;
         }
     }
 }
@@ -283,6 +347,17 @@
                     text-align: right;
                 }
             }
+        }
+    }
+
+    .order-pager-wrapper {
+        .order-pager-wrapper-top {
+            padding-left: 0;
+            padding-right: 0;
+        }
+
+        .pages {
+            float: right;
         }
     }
 

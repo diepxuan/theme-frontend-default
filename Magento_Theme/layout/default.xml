@@ -1,28 +1,12 @@
 <?xml version="1.0"?>
-<!--
-/**
- * Copyright © 2017 Diepxuan, Inc. All rights reserved.
- */
--->
-<page layout="1column" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-      xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
-
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
     <body>
-        <referenceContainer name="header.container">
-            <referenceBlock name="skip_to_content" remove="true"/>
-            <referenceBlock name="store_language" remove="true"/>
-            <referenceBlock name="top.links" remove="true"/>
-        </referenceContainer>
-        <referenceContainer name="page.top">
-            <referenceBlock name="navigation.sections">
-                <referenceBlock name="store.links" remove="true"/>
+        <referenceContainer name="footer-container">
+            <referenceBlock name="footer_links">
+                <referenceBlock name="contact-us-link" remove="true" />
             </referenceBlock>
+            <referenceBlock name="report.bugs" remove="true" />
         </referenceContainer>
-        <referenceContainer name="footer">
-            <referenceBlock name="store_switcher" remove="true"/>
-            <referenceBlock name="footer_links" remove="true"/>
-            <!--            <referenceBlock name="copyright" remove="true"/>-->
-            <referenceBlock name="report.bugs" remove="true"/>
-        </referenceContainer>
+        <!-- <referenceBlock name="store_language" remove="true"/> -->
     </body>
 </page>

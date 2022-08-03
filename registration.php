@@ -1,10 +1,9 @@
 <?php
 /**
- * Copyright © 2017 Dxvn, Inc. All rights reserved.
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
  */
 
-\Magento\Framework\Component\ComponentRegistrar::register(
-    \Magento\Framework\Component\ComponentRegistrar::THEME,
-    'frontend/Diepxuan/dxvn',
-    __DIR__
-);
+use \Magento\Framework\Component\ComponentRegistrar;
+
+ComponentRegistrar::register(ComponentRegistrar::THEME, 'frontend/Diepxuan/default', __DIR__);

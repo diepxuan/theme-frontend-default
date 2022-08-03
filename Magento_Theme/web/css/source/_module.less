@@ -1,7 +1,7 @@
-/**
- * Copyright © 2017 Dxvn, Inc. All rights reserved.
- * See COPYING.txt for license details.
- */
+// /**
+//  * Copyright © Magento, Inc. All rights reserved.
+//  * See COPYING.txt for license details.
+//  */
 
 //
 //  Theme variables
@@ -35,7 +35,7 @@
 @minicart-icons-color: @header-icons-color;
 @minicart-icons-color-hover: @header-icons-color-hover;
 
-@button__shadow: inset 0 2px 1px rgba(0, 0, 0, .12);
+@button__shadow: inset 0 2px 1px rgba(0,0,0,.12);
 
 @h1__margin-bottom__desktop: @indent__xl;
 
@@ -50,6 +50,16 @@
 
     body {
         .lib-css(background-color, @page__background-color);
+    }
+
+    .page-wrapper {
+        .lib-vendor-prefix-display(flex);
+        .lib-vendor-prefix-flex-direction(column);
+        min-height: 100vh; // Stretch content area for sticky footer
+    }
+
+    .page-main {
+        .lib-vendor-prefix-flex-grow(1);
     }
 
     //
@@ -79,11 +89,10 @@
 
         img {
             display: block;
-            height: inherit;
+            height: auto;
         }
 
         .page-print & {
-            display: inline-block;
             float: none;
         }
     }
@@ -112,6 +121,11 @@
             width: 100%;
             z-index: 15;
         }
+    }
+
+    .action-skip-wrapper {
+        height: 0;
+        position: relative;
     }
 
     //
@@ -160,6 +174,7 @@
     .footer {
         &.content {
             border-top: 1px solid @border-color__base;
+            margin-top: 25px;
             padding-bottom: 25px;
             padding-top: 25px;
 
@@ -192,14 +207,14 @@
 
             .options {
                 .lib-dropdown(
-                    @_dropdown-actions-padding: 0,
-                    @_dropdown-list-item-padding: 0,
-                    @_dropdown-toggle-icon-content: @icon-down,
-                    @_dropdown-toggle-active-icon-content: @icon-up,
-                    @_icon-font-text-hide: true,
-                    @_icon-font-size: 22px,
-                    @_icon-font-line-height: 22px,
-                    @_dropdown-list-min-width: 160px
+                @_dropdown-actions-padding: 0,
+                @_dropdown-list-item-padding: 0,
+                @_dropdown-toggle-icon-content: @icon-down,
+                @_dropdown-toggle-active-icon-content: @icon-up,
+                @_icon-font-text-hide: true,
+                @_icon-font-size: 22px,
+                @_icon-font-line-height: 22px,
+                @_dropdown-list-min-width: 160px
                 );
 
                 ul.dropdown {
@@ -275,26 +290,12 @@
 //  _____________________________________________
 
 .media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) {
-
-    html,
-    body {
-        height: 100%; // Stretch screen area for sticky footer
-    }
-
     .page-wrapper {
-        .lib-vendor-prefix-display(flex);
-        .lib-vendor-prefix-flex-direction(column);
-        min-height: 100%; // Stretch content area for sticky footer
-
         > .breadcrumbs,
         > .top-container,
         > .widget {
+            box-sizing: border-box;
             width: 100%;
-        }
-
-        .ie10 &,
-        .ie11 & {
-            height: 100%;
         }
     }
 

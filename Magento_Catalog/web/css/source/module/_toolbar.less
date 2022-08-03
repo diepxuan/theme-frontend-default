@@ -1,17 +1,20 @@
 // /**
-//  * Copyright © 2017 Dxvn, Inc. All rights reserved.
+//  * Copyright © Magento, Inc. All rights reserved.
 //  * See COPYING.txt for license details.
 //  */
+
+//
+//  Variables
+//  ---------------------------------------------
+
+@toolbar-mode-icon-font-size: 24px;
+@toolbar-element-background: @panel__background-color;
 
 //
 //  Common
 //  _____________________________________________
 
-@toolbar-mode-icon-font-size: 24px;
-@toolbar-element-background: @panel__background-color;
-
 & when (@media-common = true) {
-
     .page-products {
         .columns {
             position: relative;
@@ -42,7 +45,7 @@
         &:extend(.abs-add-clearfix all);
 
         .pages {
-            //display: none;
+            display: none;
 
             .products.wrapper ~ & {
                 display: block;
@@ -50,8 +53,6 @@
         }
 
         .limiter {
-            //display: none;
-
             .control {
                 display: inline-block;
             }
@@ -63,6 +64,11 @@
 
         .products.wrapper ~ .toolbar & {
             display: none;
+        }
+
+        .sorter-action {
+            position: relative;
+            top: -2px;
         }
     }
 
@@ -83,9 +89,11 @@
         );
     }
 
-    .sorter.sort-desc {
-        &:before {
-            content: @icon-arrow-down;
+    .sorter {
+        .sort-desc {
+            &:before {
+                content: @icon-arrow-down;
+            }
         }
     }
 
@@ -99,7 +107,7 @@
     }
 
     .limiter-label {
-        font-weight: 400;
+        font-weight: @font-weight__regular;
     }
 
     .limiter {
@@ -188,11 +196,10 @@
         .lib-icon-font-symbol(@icon-list);
     }
 
-    .limiter {
-        float: right;
-
-        .products.wrapper ~ .toolbar & {
+    .toolbar {
+        .products.wrapper ~ & .limiter {
             display: block;
+            float: right;
         }
     }
 }

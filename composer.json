@@ -1,14 +1,18 @@
 {
-    "name": "diepxuan/theme-frontend-dxvn",
-    "description": "Angular theme for Magento 2",
+    "name": "diepxuan/theme-frontend-default",
+    "description": "N/A",
     "type": "magento2-theme",
-    "version": "0.0.4.7",
     "license": [
         "OSL-3.0",
         "AFL-3.0"
     ],
+    "config": {
+        "sort-packages": true
+    },
+    "version": "100.3.7",
     "require": {
-        "diepxuan/module-magento": "^0.0.2"
+        "php": "~7.3.0||~7.4.0",
+        "magento/framework": "102.0.*"
     },
     "autoload": {
         "files": [
