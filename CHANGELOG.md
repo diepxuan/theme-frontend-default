@@ -1,5 +1,7 @@
 # 1.0.0
 
+- Initial version 1.0.0 of Diepxuan Theme to public repository
+
 - Theme improvements:
   - listing style
   - update new default logo
